@@ -42,3 +42,6 @@ temp_*.txt
 # Large media files (tracked via Git LFS)
 # Videos will be tracked via Git LFS (see .gitattributes)
 *.zip
+
+# Local Netlify folder
+.netlify
