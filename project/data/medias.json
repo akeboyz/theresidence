@@ -1,0 +1,78 @@
+{
+  "version": "1.0.0",
+  "generated_at": "2025-08-14",
+  "medias": [
+    {
+      "media_id": "od001-01",
+      "id_ref": "od001",
+      "media_type": "video",
+      "file_name": "./client/medias/od001-01.MP4",
+      "file_size_mb": 4.2,
+      "length_sec": 31,
+      "start_date": "2025-08-10",
+      "end_date": null,
+      "media_title": "Internet Package",
+      "approval_status": "approved",
+      "cta": {
+        "text": "Contact Now!",
+        "action": "navigate",
+        "url": "./cta.html?type=contact&id=od001",
+        "delay": 2
+      }
+    },
+    {
+      "media_id": "od002-01",
+      "id_ref": "od002",
+      "media_type": "video",
+      "file_name": "./client/medias/od002-01.MP4",
+      "file_size_mb": 6.4,
+      "length_sec": 31,
+      "start_date": "2025-08-10",
+      "end_date": null,
+      "media_title": "Glow Up Mobile",
+      "approval_status": "approved",
+      "cta": {
+        "text": "Book Service!",
+        "action": "navigate",
+        "url": "./cta.html?type=book&id=od002",
+        "delay": 2
+      }
+    },
+    {
+      "media_id": "od003-01",
+      "id_ref": "od003",
+      "media_type": "video",
+      "file_name": "./client/medias/od003-01.MP4",
+      "file_size_mb": 5.0,
+      "length_sec": 30,
+      "start_date": "2025-08-14",
+      "end_date": null,
+      "media_title": "Hipster Brand",
+      "approval_status": "approved",
+      "cta": {
+        "text": "Contact Now!",
+        "action": "navigate",
+        "url": "./cta.html?type=contact&id=od003",
+        "delay": 2
+      }
+    },
+    {
+      "media_id": "dine004-01",
+      "id_ref": "dine004",
+      "media_type": "video",
+      "file_name": "./client/medias/dine004-01.MP4",
+      "file_size_mb": 5.0,
+      "length_sec": 30,
+      "start_date": "2025-08-14",
+      "end_date": null,
+      "media_title": "Vistro Restaurant",
+      "approval_status": "approved",
+      "cta": {
+        "text": "Order Now!",
+        "action": "navigate",
+        "url": "./cta.html?type=order&id=dine004",
+        "delay": 2
+      }
+    }
+  ]
+}

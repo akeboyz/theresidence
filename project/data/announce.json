@@ -1,0 +1,13 @@
+[
+  {
+    "announcement_id": "ann001",
+    "title_th": "ประชุมสามัญประจำปี",
+    "title_en": "Annual General Meeting",
+    "date": "15/8/25",
+    "image": "./project/images/announcements/announce001.jpg",
+    "priority": "high",
+    "status": "active",
+    "created_date": "2025-08-10",
+    "display_duration": 8000
+  }
+]

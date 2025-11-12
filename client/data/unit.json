@@ -1,0 +1,292 @@
+{
+  "units": [
+    {
+      "unit_id": "unit001",
+      "name_th": "ยูนิต A108 - โปรโมชั่นพิเศษ!",
+      "name_en": "Unit A108 - Special Deal!",
+      "unit": {
+        "unit_number": "A4904",
+        "room_type": "3 Bedroom",
+        "room_size": 308,
+        "floor": 39,
+        "building": "A",
+        "view": "City View",
+        "listing_type": "Sell",
+        "room_decor": "Fully Furnished",
+        "num_parking": 3,
+        "status": "sold out"
+      },
+      "condition": {
+        "selling_price": 44000000,
+        "original_price": 46000000,
+        "discount_percentage": 5,
+        "rental_price": null,
+        "available_date": "01-Jan-2026",
+        "deposit": 300000,
+        "inclusive_of": ["50% transfer fee and commission"]
+      },
+      "images": [
+        "./project/images/properties/unit001_01.jpg",
+        "./project/images/properties/unit001_02.jpg",
+        "./project/images/properties/unit001_03.jpg",
+        "./project/images/properties/unit001_04.jpg",
+        "./project/images/properties/unit001_05.jpg"
+      ],
+      "image": "./medias/unit001-01.MP4",
+      "floor_plan": "./project/images/properties/unit001_floorplan.jpg",
+      "agent": {
+        "name_th": "คุณเอก",
+        "name_en": "Ake",
+        "phone": "+66-89-772-6535",
+        "email": "info@aquamax.biz",
+        "line_id": "@aquamx",
+        "photo": "./client/images/agents/agent001.jpg"
+      },
+      "promotion": {
+        "title_th": "ลดราคาพิเศษ 2,500,000 บาท!",
+        "title_en": "Special Discount 2,500,000 THB!",
+        "valid_until": "31-Dec-2026"
+      }
+    },
+    {
+      "unit_id": "unit002",
+      "name_th": "ยูนิต A257 - ห้องสวย ราคาดี",
+      "name_en": "Unit A257 - Beautiful Room, Great Price",
+      "unit": {
+        "unit_number": "A257",
+        "room_type": "3 Bedroom",
+        "room_size": 308,
+        "floor": 39,
+        "building": "A",
+        "view": "City View",
+        "listing_type": "Rent",
+        "room_decor": "Fully Furnished",
+        "num_parking": 3,
+        "status": "rented"
+      },
+      "condition": {
+        "selling_price": null,
+        "rental_price": 50000,
+        "original_rental": 50000,
+        "discount_percentage": 0,
+        "available_date": "01-Jan-2026",
+        "deposit": 150000,
+        "inclusive_of": ["50% transfer fee and commission"]
+      },
+      "images": [
+        "./project/images/properties/unit002_01.jpg",
+        "./project/images/properties/unit002_02.jpg",
+        "./project/images/properties/unit002_03.jpg",
+        "./project/images/properties/unit002_04.jpg",
+        "./project/images/properties/unit002_05.jpg"
+      ],
+      "image": "./medias/unit002-01.MP4",
+      "floor_plan": "./project/images/properties/unit002_floorplan.jpg",
+      "agent": {
+        "name_th": "คุณเอก",
+        "name_en": "Ake",
+        "phone": "+66-89-772-6535",
+        "email": "info@aquamax.biz",
+        "line_id": "@aquamx",
+        "photo": "./client/images/agents/agent001.jpg"
+      },
+      "promotion": {
+        "title_th": "เช่าดีล! ลดค่าเช่า 5,000 บาท/เดือน",
+        "title_en": "Rental Deal! 5,000 THB/month discount",
+        "valid_until": "28-Feb-2025"
+      }
+    },
+    {
+      "unit_id": "unit003",
+      "name_th": "ยูนิต B305 - วิวสวยมาก!",
+      "name_en": "Unit B305 - Amazing View!",
+      "unit": {
+        "unit_number": "B305",
+        "room_type": "3 Bedroom",
+        "room_size": 308,
+        "floor": 39,
+        "building": "A",
+        "view": "City View",
+        "listing_type": "Sell",
+        "room_decor": "Fully Furnished",
+        "num_parking": 3,
+        "status": "sold out"
+      },
+      "condition": {
+        "selling_price": 44000000,
+        "original_price": 46000000,
+        "discount_percentage": 17,
+        "rental_price": null,
+        "available_date": "01-Jan-2026",
+        "deposit": 150000,
+        "inclusive_of": ["50% transfer fee and commission"]
+      },
+      "images": [
+        "./project/images/properties/unit003_01.jpg",
+        "./project/images/properties/unit003_02.jpg",
+        "./project/images/properties/unit003_03.jpg",
+        "./project/images/properties/unit003_04.jpg",
+        "./project/images/properties/unit003_05.jpg"
+      ],
+      "image": "medias/shop001-02.MP4",
+      "floor_plan": "./project/images/properties/unit003_floorplan.jpg",
+      "agent": {
+        "name_th": "คุณเอก",
+        "name_en": "Ake",
+        "phone": "+66-89-772-6535",
+        "email": "info@aquamax.biz",
+        "line_id": "@aquamx",
+        "photo": "./client/images/agents/agent001.jpg"
+      },
+      "promotion": {
+        "title_th": "ลดราคา 600,000 บาท พร้อมเฟอร์ฯ",
+        "title_en": "600K discount with furniture included",
+        "valid_until": "31-Mar-2025"
+      }
+    },
+    {
+      "unit_id": "unit004",
+      "name_th": "ยูนิต C150 - โอกาสทอง!",
+      "name_en": "Unit C150 - Golden Opportunity!",
+      "unit": {
+        "unit_number": "C150",
+        "room_type": "3 Bedroom",
+        "room_size": 308,
+        "floor": 39,
+        "building": "A",
+        "view": "City View",
+        "listing_type": "Rent",
+        "room_decor": "Fully Furnished",
+        "num_parking": 3,
+        "status": "rented"
+      },
+      "condition": {
+        "selling_price": null,
+        "rental_price": 50000,
+        "original_rental": 50000,
+        "discount_percentage": 0,
+        "available_date": "01-Jan-2026",
+        "deposit": 150000,
+        "inclusive_of": ["50% transfer fee and commission"]
+      },
+      "images": [
+        "./project/images/properties/unit004_01.jpg",
+        "./project/images/properties/unit004_02.jpg",
+        "./project/images/properties/unit004_03.jpg",
+        "./project/images/properties/unit004_04.jpg",
+        "./project/images/properties/unit004_05.jpg"
+      ],
+      "image": "medias/od002-01.MP4",
+      "floor_plan": "./project/images/properties/unit004_floorplan.jpg",
+      "agent": {
+        "name_th": "คุณเอก",
+        "name_en": "Ake",
+        "phone": "+66-89-772-6535",
+        "email": "info@aquamax.biz",
+        "line_id": "@aquamx",
+        "photo": "./client/images/agents/agent001.jpg"
+      },
+      "promotion": {
+        "title_th": "เช่า 3 เดือนแรก ลด 20%",
+        "title_en": "20% off first 3 months rent",
+        "valid_until": "30-Apr-2025"
+      }
+    },
+    {
+      "unit_id": "unit005",
+      "name_th": "ยูนิต D201 - ห้องใหม่ ราคาปังจริง!",
+      "name_en": "Unit D201 - Brand New, Great Deal!",
+      "unit": {
+        "unit_number": "D201",
+        "room_type": "3 Bedroom",
+        "room_size": 308,
+        "floor": 39,
+        "building": "A",
+        "view": "City View",
+        "listing_type": "Sell",
+        "room_decor": "Fully Furnished",
+        "num_parking": 3,
+        "status": "sold out"
+      },
+      "condition": {
+        "selling_price": 44000000,
+        "original_price": 46000000,
+        "discount_percentage": 17,
+        "rental_price": null,
+        "available_date": "01-Jan-2026",
+        "deposit": 150000,
+        "inclusive_of": ["50% transfer fee and commission"]
+      },
+      "images": [
+        "./project/images/properties/unit005_01.jpg",
+        "./project/images/properties/unit005_02.jpg",
+        "./project/images/properties/unit005_03.jpg",
+        "./project/images/properties/unit005_04.jpg",
+        "./project/images/properties/unit005_05.jpg"
+      ],
+      "image": "medias/od002-01.MP4",
+      "floor_plan": "./project/images/properties/unit005_floorplan.jpg",
+      "agent": {
+        "name_th": "คุณเอก",
+        "name_en": "Ake",
+        "phone": "+66-89-772-6535",
+        "email": "info@aquamax.biz",
+        "line_id": "@aquamx",
+        "photo": "./client/images/agents/agent001.jpg"
+      },
+      "promotion": {
+        "title_th": "ลดราคา 700,000 + ฟรีเฟอร์ฯ!",
+        "title_en": "700K discount + Free furniture!",
+        "valid_until": "31-May-2025"
+      }
+    },
+    {
+      "unit_id": "unit006",
+      "name_th": "ยูนิต E101 - ชั้นล่าง สะดวก!",
+      "name_en": "Unit E101 - Ground Floor, Convenient!",
+      "unit": {
+        "unit_number": "E101",
+        "room_type": "3 Bedroom",
+        "room_size": 308,
+        "floor": 39,
+        "building": "A",
+        "view": "City View",
+        "listing_type": "Rent",
+        "room_decor": "Fully Furnished",
+        "num_parking": 3,
+        "status": "rented"
+      },
+      "condition": {
+        "selling_price": null,
+        "rental_price": 50000,
+        "original_rental": 50000,
+        "discount_percentage": 0,
+        "available_date": "01-Jan-2026",
+        "deposit": 150000,
+        "inclusive_of": ["50% transfer fee and commission"]
+      },
+      "images": [
+        "./project/images/properties/unit006_01.jpg",
+        "./project/images/properties/unit006_02.jpg",
+        "./project/images/properties/unit006_03.jpg",
+        "./project/images/properties/unit006_04.jpg",
+        "./project/images/properties/unit006_05.jpg"
+      ],
+      "image": "medias/unit001-01.MP4",
+      "floor_plan": "./project/images/properties/unit006_floorplan.jpg",
+      "agent": {
+        "name_th": "คุณเอก",
+        "name_en": "Ake",
+        "phone": "+66-89-772-6535",
+        "email": "info@aquamax.biz",
+        "line_id": "@aquamx",
+        "photo": "./client/images/agents/agent001.jpg"
+      },
+      "promotion": {
+        "title_th": "ห้องชั้นล่าง ลดค่าเช่า 7,000 บาท",
+        "title_en": "Ground floor unit, 7K rent discount",
+        "valid_until": "31-Jul-2025"
+      }
+    }
+  ]
+}

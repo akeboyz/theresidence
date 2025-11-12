@@ -1,0 +1,152 @@
+[
+  {
+    "menu_type": "Viennoiserie & Pastries",
+    "menu_type_th": "ขนมอบฝรั่งเศสและเพสทรี",
+    "title": "Pain au Chocolat",
+    "title_th": "พัฟช็อกโกแลตฝรั่งเศส",
+    "description": "Flaky pastry with dark chocolate inside",
+    "description_th": "พัฟเนยฝรั่งเศสสอดไส้ช็อกโกแลตเข้มข้น",
+    "price": 120,
+    "image": "./images/menu/pastry01.jpg"
+  },
+  {
+    "menu_type": "Viennoiserie & Pastries",
+    "menu_type_th": "ขนมอบฝรั่งเศสและเพสทรี",
+    "title": "Chocolate Almond Croissant",
+    "title_th": "ครัวซองต์ช็อกโกแลตอัลมอนด์",
+    "description": "Buttery croissant with almond and chocolate",
+    "description_th": "ครัวซองต์อบเนยไส้อัลมอนด์และช็อกโกแลต",
+    "price": 135,
+    "image": "./images/menu/pastry02.jpg"
+  },
+  {
+    "menu_type": "Quiches",
+    "menu_type_th": "คีช",
+    "title": "Pumpkin & Feta Cheese Quiche",
+    "title_th": "คีชฟักทองและชีสเฟต้า",
+    "description": "Savory tart with roasted pumpkin and feta",
+    "description_th": "ทาร์ตเค็มสอดไส้ฟักทองอบและชีสเฟต้า",
+    "price": 140,
+    "image": "./images/menu/pastry03.jpg"
+  },
+  {
+    "menu_type": "Quiches",
+    "menu_type_th": "คีช",
+    "title": "Spinach & Cheese Quiche",
+    "title_th": "คีชผักโขมและชีส",
+    "description": "Classic quiche filled with spinach and cheese",
+    "description_th": "คีชไส้ผักโขมและชีส",
+    "price": 140,
+    "image": "./images/menu/pastry04.jpg"
+  },
+  {
+    "menu_type": "Quiches",
+    "menu_type_th": "คีช",
+    "title": "Onion & Mushroom Quiche",
+    "title_th": "คีชหัวหอมและเห็ด",
+    "description": "Savory quiche with caramelized onion and mushrooms",
+    "description_th": "คีชหัวหอมผัดกับเห็ดหอม",
+    "price": 140,
+    "image": "./images/menu/pastry05.jpg"
+  },
+  {
+    "menu_type": "Burekas",
+    "menu_type_th": "บูเรคัส",
+    "title": "Spinach Burekas",
+    "title_th": "บูเรคัสผักโขม",
+    "description": "Flaky pastry with spinach filling",
+    "description_th": "พัฟสไตล์ตะวันออกกลางไส้ผักโขม",
+    "price": 110,
+    "image": "./images/menu/pastry06.jpg"
+  },
+  {
+    "menu_type": "Burekas",
+    "menu_type_th": "บูเรคัส",
+    "title": "Cheese Burekas",
+    "title_th": "บูเรคัสชีส",
+    "description": "Burekas filled with creamy cheese",
+    "description_th": "บูเรคัสไส้ชีสเนื้อนุ่ม",
+    "price": 110,
+    "image": "./images/menu/pastry07.jpg"
+  },
+  {
+    "menu_type": "Burekas",
+    "menu_type_th": "บูเรคัส",
+    "title": "Potato & Onion Burekas",
+    "title_th": "บูเรคัสมันฝรั่งและหัวหอม",
+    "description": "Burekas filled with mashed potato and sautéed onion",
+    "description_th": "พัฟไส้มันฝรั่งบดกับหัวหอมผัด",
+    "price": 110,
+    "image": "./images/menu/pastry08.jpg"
+  },
+  {
+    "menu_type": "Breads & Sandwiches",
+    "menu_type_th": "ขนมปังและแซนด์วิช",
+    "title": "Salmon Gravlax Sandwich",
+    "title_th": "แซนด์วิชแซลมอนแกรฟแลกซ์",
+    "description": "Cured salmon with cream cheese on sourdough",
+    "description_th": "แซลมอนดอง เสิร์ฟบนขนมปังซาวโดว์กับชีส",
+    "price": 195,
+    "image": "./images/menu/pastry09.jpg"
+  },
+  {
+    "menu_type": "Breads & Sandwiches",
+    "menu_type_th": "ขนมปังและแซนด์วิช",
+    "title": "Jerusalem Bagel",
+    "title_th": "เบเกิลเยรูซาเล็ม",
+    "description": "Oval-shaped sesame bagel, chewy and soft",
+    "description_th": "เบเกิลงารูปวงรี เนื้อนุ่มเคี้ยวหนึบ",
+    "price": 85,
+    "image": "./images/menu/pastry10.jpg"
+  },
+  {
+    "menu_type": "Breads & Sandwiches",
+    "menu_type_th": "ขนมปังและแซนด์วิช",
+    "title": "Challah",
+    "title_th": "ขนมปังชัลลาห์แบบยิว",
+    "description": "Braided Jewish bread with a hint of sweetness",
+    "description_th": "ขนมปังเปียสไตล์ยิว หอมมันนุ่ม",
+    "price": 95,
+    "image": "./images/menu/pastry11.jpg"
+  },
+  {
+    "menu_type": "Cakes & Cookies",
+    "menu_type_th": "เค้กและคุกกี้",
+    "title": "Carrot Cake",
+    "title_th": "เค้กแครอท",
+    "description": "Spiced cake with carrot, nuts and cream cheese frosting",
+    "description_th": "เค้กแครอทราดหน้าครีมชีส หอมเครื่องเทศ",
+    "price": 115,
+    "image": "./images/menu/pastry12.jpg"
+  },
+  {
+    "menu_type": "Cakes & Cookies",
+    "menu_type_th": "เค้กและคุกกี้",
+    "title": "Chocolate Chip Cookies",
+    "title_th": "คุกกี้ช็อกโกแลตชิพ",
+    "description": "Crunchy cookies loaded with chocolate chips",
+    "description_th": "คุกกี้กรอบ ช็อกโกแลตชิพแน่น ๆ",
+    "price": 85,
+    "image": "./images/menu/pastry13.jpg"
+  },
+  {
+    "menu_type": "Cakes & Cookies",
+    "menu_type_th": "เค้กและคุกกี้",
+    "title": "Tahini Cookies",
+    "title_th": "คุกกี้งาทาฮินี",
+    "description": "Nutty cookies made with sesame tahini",
+    "description_th": "คุกกี้งาบดหอมมันแบบตะวันออกกลาง",
+    "price": 90,
+    "image": "./images/menu/pastry14.jpg"
+  },
+  {
+    "menu_type": "Cakes & Cookies",
+    "menu_type_th": "เค้กและคุกกี้",
+    "title": "Honey & Oat Cookies",
+    "title_th": "คุกกี้น้ำผึ้งและข้าวโอ๊ต",
+    "description": "Chewy oat cookies with natural honey",
+    "description_th": "คุกกี้ข้าวโอ๊ตเนื้อนุ่มผสมน้ำผึ้งแท้",
+    "price": 90,
+    "image": "./images/menu/pastry15.jpg"
+  }
+]

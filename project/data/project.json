@@ -1,0 +1,36 @@
+{
+  "projects": [
+    {
+      "project_id": "prj001",
+      "project_name": "The Lumpini 24",
+      "project_logo": "./project/images/properties/project-logo.png",
+      "pm_id": "pm001",
+      "background_color": "#1db57b",
+      "project_address": "Sukhumvit 24, Bangkok, Thailand",
+      "developer_name": "LPN Plc",
+      "completion_period": "1993",
+      "facility_list": ["Swimming Pool", "Fitness", "Sauna", "Library", "Playground", "24h Security", "Parking"],
+      "total_units": 58,
+      "total_building": 1,
+      "total_floor": 46,
+      "total_parking": 0,
+      "map_url": "https://maps.app.goo.gl/sfAjd7UNnFe739hi9",
+      "map_embed_url": "...",
+      "latitude": 13.722222,
+      "longitude": 100.565555,
+      "project_image": "medias/cover.png",
+      "main_menu_video": "videos/main_menu.mp4",
+      "juristic_update_video": "medias/juristic_update.mp4",
+      "contact_person": {
+        "name": "คุณวิทยา ลิ้มเจริญ",
+        "role": "Juristic Manager",
+        "phone": "082-345-6789",
+        "email": "wittaya@lumpini.com",
+        "line": "@thelumpini24"
+      },
+      "project_status": "active",
+      "project_type": "condominium",
+      "project_detail_json": "project/prj001.json"
+    }
+  ]
+}

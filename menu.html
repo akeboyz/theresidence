@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover"
+  />
+  <title>Main Menu</title>
+  <link rel="icon" href="data:,">
+
+  <!-- Firebase for Analytics -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+
+  <script>
+    // Device Configuration
+    window.CONFIG = {
+      PROJECT_ID: 'prj004',
+      DEVICE_ID: 'prj002-mahogany-menu'
+    };
+
+    // Initialize Firebase
+    if (!firebase.apps.length) {
+      const firebaseConfig = {
+        apiKey: "AIzaSy" + "CZ4TnAas5EY0iLrNP2m-NlMEh46hRe1d4",
+        authDomain: "aquamx-system.firebaseapp.com",
+        projectId: "aquamx-system",
+        storageBucket: "aquamx-system.firebasestorage.app",
+        messagingSenderId: "893876394311",
+        appId: "1:893876394311:web:85541afc56d2325d631462"
+      };
+      firebase.initializeApp(firebaseConfig);
+    }
+    window.db = firebase.firestore();
+
+    // Touch Analytics
+    let touchCount = 0;
+    let lastSyncTime = Date.now();
+
+    function trackTouch(element) {
+      touchCount++;
+      db.collection('touch_analytics').add({
+        device_id: window.CONFIG.DEVICE_ID,
+        project_id: window.CONFIG.PROJECT_ID,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+        element: element || 'menu-item',
+        action: 'click',
+        page: 'menu.html',
+        session_date: new Date().toISOString().split('T')[0]
+      }).catch(err => console.error('Touch tracking error:', err));
+
+      // Update summary every minute
+      if (Date.now() - lastSyncTime >= 60000) {
+        updateDailySummary();
+        lastSyncTime = Date.now();
+      }
+    }
+
+    function updateDailySummary() {
+      if (touchCount === 0) return;
+      const today = new Date().toISOString().split('T')[0];
+      db.collection('touch_summary').doc(`${window.CONFIG.DEVICE_ID}_${today}`).set({
+        device_id: window.CONFIG.DEVICE_ID,
+        project_id: window.CONFIG.PROJECT_ID,
+        date: today,
+        touch_count: firebase.firestore.FieldValue.increment(touchCount),
+        last_updated: firebase.firestore.FieldValue.serverTimestamp()
+      }, { merge: true }).then(() => {
+        console.log(`✅ Synced ${touchCount} touches`);
+        touchCount = 0;
+      });
+    }
+
+    document.addEventListener('click', () => trackTouch('menu-screen'), { passive: true });
+    document.addEventListener('touchstart', () => trackTouch('menu-screen'), { passive: true });
+    window.addEventListener('beforeunload', () => { if (touchCount > 0) updateDailySummary(); });
+
+    console.log('🔍 Touch analytics enabled for menu');
+  </script>
+
+  <style>
+    /* ✅ รีเซ็ตพื้นฐาน */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* ✅ ขนาดเต็มหน้าจอและจัดตำแหน่งกึ่งกลาง */
+    html, body {
+      width: 100vw;
+      height: 100vh;
+      background-color: black; /* พื้นหลัง */
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: system-ui, -apple-system, "Segoe UI", Tahoma, Arial, sans-serif;
+    }
+
+    /* ✅ Container ของกริดเมนู */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      width: 100%;
+      height: 100%;
+      max-width: 56.25vh;        /* 9:16 ratio */
+      max-height: 177.78vw;      /* maintain 9:16 ratio */
+      background-color: white;
+      gap: 0;
+      row-gap: 0;
+      column-gap: 0;
+    }
+
+    /* ✅ video ให้แสดงเต็มโดยไม่ตัด */
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      background-color: white;
+      display: block;
+      cursor: pointer;
+      -webkit-user-select: none;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* ✅ วิดีโอแถวบนสุด (project.mp4) */
+    .video-top {
+      grid-column: 1 / span 2;
+      grid-row: 1 / 2;
+      object-fit: cover;
+      object-position: top;
+    }
+
+    /* ✅ ไม่ให้มีช่องว่างระหว่างช่อง */
+    .video-grid > * {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Blink animation */
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    /* Back to Video button */
+    .back-to-video {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 80;
+      margin: 0;
+      padding: 5px 10px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 13px;
+      background: rgba(0, 0, 0, 0.15);
+      backdrop-filter: blur(8px);
+      box-shadow: none;
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.9375rem;
+      letter-spacing: 0.3px;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.3s ease;
+    }
+    .back-to-video::before {
+      content: "‹‹";
+      font-size: 0.8125rem;
+      font-weight: 400;
+    }
+    .back-to-video:hover {
+      background: rgba(0, 0, 0, 0.25);
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    /* Running text overlay */
+    .text-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.0756);
+      backdrop-filter: blur(8px);
+      color: white;
+      padding: 12px 0;
+      overflow: hidden;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    .text-overlay-content {
+      display: inline-block;
+      white-space: nowrap;
+      animation: scroll-left-immediate 60s linear infinite;
+      font-size: 1.35rem;
+      font-weight: 500;
+      letter-spacing: 0.45px;
+    }
+
+    @keyframes scroll-left-immediate {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    /* Hand pointer overlay styles */
+    .video-cell {
+      position: relative;
+    }
+
+    .hand-pointer {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      font-size: 1.75rem;
+      z-index: 20;
+      pointer-events: none;
+      animation: handBounceFlash 2s ease-in-out infinite;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+      opacity: 0.75;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+    }
+
+    .touch-text {
+      font-size: 0.455rem;
+      font-weight: 600;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+      line-height: 1;
+      opacity: 0.4;
+    }
+
+    @keyframes handBounceFlash {
+      0%, 100% {
+        transform: translate(0, 0) rotate(-15deg);
+        opacity: 1;
+      }
+      25% {
+        transform: translate(5px, 5px) rotate(-20deg);
+        opacity: 0.7;
+      }
+      50% {
+        transform: translate(8px, 8px) rotate(-15deg);
+        opacity: 1;
+      }
+      75% {
+        transform: translate(5px, 5px) rotate(-20deg);
+        opacity: 0.7;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="video-grid" style="position: relative;">
+    <!-- ✅ วิดีโอบนสุดแบบเต็มแถว -->
+    <div style="position: relative; grid-column: 1 / span 2; grid-row: 1 / 2;">
+      <video class="video-top" src="./project/medias/project.mp4" autoplay muted loop playsinline preload="metadata"></video>
+      <div class="back-to-video blink" onclick="window.location.href='./index.html'">Back to Video</div>
+      <div class="text-overlay">
+        <div class="text-overlay-content">
+          ขอต้อนรับสู่ Concierge by AquaMx ผู้ช่วยดิจิทัลสำหรับผู้พักอาศัย รวบรวมข้อมูล บริการ และข่าวสารไว้ครบในที่เดียว เพียงสัมผัสเมนูด้านล่างเพื่อเริ่มต้นใช้งาน &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; Welcome to Concierge by AquaMx — your digital assistant for residents. All info and services in one touch. Tap below to begin.
+        </div>
+      </div>
+    </div>
+
+    <!-- ✅ 6 วิดีโอด้านล่างแบบ 2 คอลัมน์ 3 แถว -->
+    <div class="video-cell">
+      <video src="./corporate/medias/dining.MP4" autoplay muted loop playsinline preload="metadata" onclick="navigate('./category.html?type=dining')"></video>
+      <div class="hand-pointer">
+        👆
+        <span class="touch-text">touch</span>
+      </div>
+    </div>
+    <div class="video-cell">
+      <video src="./corporate/medias/delivery.MP4" autoplay muted loop playsinline preload="metadata" onclick="navigate('./category.html?type=delivery')"></video>
+      <div class="hand-pointer">
+        👆
+        <span class="touch-text">touch</span>
+      </div>
+    </div>
+    <div class="video-cell">
+      <video src="./corporate/medias/daily.MP4" autoplay muted loop playsinline preload="metadata" onclick="navigate('./category.html?type=daily')"></video>
+      <div class="hand-pointer">
+        👆
+        <span class="touch-text">touch</span>
+      </div>
+    </div>
+    <div class="video-cell">
+      <video src="./corporate/medias/ondemand.MP4" autoplay muted loop playsinline preload="metadata" onclick="navigate('./category.html?type=ondemand')"></video>
+      <div class="hand-pointer">
+        👆
+        <span class="touch-text">touch</span>
+      </div>
+    </div>
+    <div class="video-cell">
+      <video src="./corporate/medias/deal.MP4" autoplay muted loop playsinline preload="metadata" onclick="navigate('./category.html?type=deal')"></video>
+      <div class="hand-pointer">
+        👆
+        <span class="touch-text">touch</span>
+      </div>
+    </div>
+    <div class="video-cell">
+      <video src="./corporate/medias/juristic.MP4" autoplay muted loop playsinline preload="metadata" onclick="navigate('./category.html?type=juristic')"></video>
+      <div class="hand-pointer">
+        👆
+        <span class="touch-text">touch</span>
+      </div>
+    </div>
+
+    <!-- Countdown overlay -->
+    <div id="countdownOverlay" style="
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    margin: 0;
+    padding: 3px 7px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 7px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(4px);
+    box-shadow: none;
+    color: #fff;
+    font-weight: 600;
+    font-size: 8px;
+    letter-spacing: 0.1px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    min-width: 35px;
+    height: 20px;
+    justify-content: center;
+    z-index: 100;
+    animation: blink 1.2s ease-in-out infinite;
+  ">
+      Back to Video in&nbsp;<span id="countdownSeconds">60</span>&nbsp;secs
+    </div>
+  </div>
+
+  <script>
+    // ✅ รองรับการเปิดอัตโนมัติบน iOS/macOS
+    const isIOS = /iPad|iPhone|Macintosh/.test(navigator.userAgent);
+    const allVideos = document.querySelectorAll('video');
+    allVideos.forEach(v => {
+      if (isIOS) v.muted = true;
+      v.setAttribute('muted', '');
+      v.setAttribute('playsinline', '');
+      v.setAttribute('autoplay', '');
+      v.play().catch(()=>{});
+    });
+
+function navigate(url) {
+  // Clear the auto-return timer before navigating
+  clearTimeout(timeout);
+  location.href = url;
+}
+
+    // ✅ Auto Return หากไม่มีการแตะจอเกิน 1 นาที
+    let timeout;
+    let countdownInterval;
+    let countdownStartTime;
+    const RETURN_DELAY = 60000; // 60 seconds
+    const COUNTDOWN_SHOW_DELAY = 10000; // Show countdown after 10 seconds
+
+    function resetInactivityTimer() {
+      clearTimeout(timeout);
+      clearInterval(countdownInterval);
+      document.getElementById('countdownOverlay').style.display = 'none';
+
+      countdownStartTime = Date.now();
+
+      timeout = setTimeout(() => {
+        // Always return to main signage page, not category
+        const signagePath = './index.html';
+        window.location.href = signagePath;
+      }, RETURN_DELAY);
+
+      // Show countdown after 10 seconds
+      setTimeout(() => {
+        showCountdown();
+      }, COUNTDOWN_SHOW_DELAY);
+    }
+
+    function showCountdown() {
+      const overlay = document.getElementById('countdownOverlay');
+      const secondsSpan = document.getElementById('countdownSeconds');
+
+      overlay.style.display = 'flex';
+
+      countdownInterval = setInterval(() => {
+        const elapsed = Date.now() - countdownStartTime;
+        const remaining = Math.max(0, Math.ceil((RETURN_DELAY - elapsed) / 1000));
+
+        secondsSpan.textContent = remaining;
+
+        if (remaining <= 0) {
+          clearInterval(countdownInterval);
+          overlay.style.display = 'none';
+        }
+      }, 1000);
+    }
+    window.addEventListener('click', resetInactivityTimer);
+    window.addEventListener('touchstart', resetInactivityTimer);
+    window.addEventListener('mousemove', resetInactivityTimer);
+    resetInactivityTimer();
+
+    // ✅ ตรวจสอบเวอร์ชันล่าสุดทุก 1 นาที หากไม่ตรง → โหลดใหม่
+    window.currentVersion = '';
+    setInterval(() => {
+      fetch('./version.txt', { cache: 'default' })  // Use browser cache for better performance
+        .then(res => res.text())
+        .then(serverVersion => {
+          const v = serverVersion.trim();
+          if (window.currentVersion && window.currentVersion !== v) {
+            console.log('🔁 New version detected → Reloading...');
+            location.reload();
+          }
+          window.currentVersion = v;
+        })
+        .catch(()=>{});
+    }, 60000);
+
+    // Register Service Worker for media caching
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./sw.js')
+        .then((registration) => {
+          console.log('✅ Service Worker registered successfully:', registration.scope);
+          return navigator.serviceWorker.ready;
+        })
+        .then(() => {
+          console.log('✅ Service Worker is ready');
+          preloadMediaFiles();
+        })
+        .catch((error) => {
+          console.error('❌ Service Worker registration failed:', error);
+        });
+
+      // Listen for download progress messages from Service Worker
+      navigator.serviceWorker.addEventListener('message', (event) => {
+        if (event.data.action === 'downloadProgress') {
+          const { current, total } = event.data;
+          const percent = Math.round((current / total) * 100);
+          console.log(`📥 Downloading media: ${current}/${total} (${percent}%)`);
+        }
+
+        if (event.data.action === 'downloadComplete') {
+          const { downloaded, total } = event.data;
+          console.log(`✅ All media files stored on device: ${downloaded}/${total}`);
+        }
+      });
+    } else {
+      console.warn('⚠️ Service Worker not supported in this browser');
+    }
+
+    // Helper function to load JSON
+    async function loadJson(url) {
+      const response = await fetch(url, { cache: 'no-store' });
+      return await response.json();
+    }
+
+    // Preload ALL media files (videos and images) for instant playback
+    async function preloadMediaFiles(){
+      if ('serviceWorker' in navigator) {
+        try {
+          const registration = await navigator.serviceWorker.ready;
+
+          if (!navigator.serviceWorker.controller) {
+            console.log('⏳ Service Worker not controlling yet, waiting...');
+            return;
+          }
+
+          // Collect ALL media files (videos and images)
+          let allMediaUrls = [];
+
+          // 1. Load videos displayed on this page
+          const pageVideos = [
+            './project/medias/project.mp4',
+            './corporate/medias/dining.MP4',
+            './corporate/medias/delivery.MP4',
+            './corporate/medias/daily.MP4',
+            './corporate/medias/ondemand.MP4',
+            './corporate/medias/deal.MP4',
+            './corporate/medias/juristic.MP4'
+          ];
+          allMediaUrls.push(...pageVideos);
+          console.log('📦 Found', pageVideos.length, 'page videos');
+
+          // 2. Load images from dining.json
+          try {
+            const diningData = await loadJson('./client/data/dining.json');
+            if (diningData && Array.isArray(diningData)) {
+              let diningCount = 0;
+              diningData.forEach(rest => {
+                if (rest.logo) { allMediaUrls.push(rest.logo); diningCount++; }
+                if (rest.images) { allMediaUrls.push(...rest.images); diningCount += rest.images.length; }
+                if (rest.menu && Array.isArray(rest.menu)) {
+                  rest.menu.forEach(item => {
+                    if (item.image) { allMediaUrls.push(item.image); diningCount++; }
+                  });
+                }
+              });
+              console.log('📦 Found', diningCount, 'dining images');
+            }
+          } catch (error) {
+            console.warn('⚠️ Could not load dining images:', error);
+          }
+
+          // 3. Load images from ondemand.json
+          try {
+            const ondemandData = await loadJson('./client/data/ondemand.json');
+            if (ondemandData && ondemandData.ondemand) {
+              let ondemandCount = 0;
+              ondemandData.ondemand.forEach(od => {
+                if (od.logo) { allMediaUrls.push(od.logo); ondemandCount++; }
+                if (od.images) { allMediaUrls.push(...od.images); ondemandCount += od.images.length; }
+              });
+              console.log('📦 Found', ondemandCount, 'ondemand images');
+            }
+          } catch (error) {
+            console.warn('⚠️ Could not load ondemand images:', error);
+          }
+
+          // 4. Load images from unit.json
+          try {
+            const unitData = await loadJson('./client/data/unit.json');
+            if (unitData && unitData.units) {
+              let unitCount = 0;
+              unitData.units.forEach(unit => {
+                if (unit.images) { allMediaUrls.push(...unit.images); unitCount += unit.images.length; }
+                if (unit.floor_plan) { allMediaUrls.push(unit.floor_plan); unitCount++; }
+              });
+              console.log('📦 Found', unitCount, 'unit images');
+            }
+          } catch (error) {
+            console.warn('⚠️ Could not load unit images:', error);
+          }
+
+          // 5. Load images from project.json
+          try {
+            const projectData = await loadJson('./project/data/project.json');
+            if (projectData && projectData.projects && Array.isArray(projectData.projects)) {
+              let projectCount = 0;
+              projectData.projects.forEach(proj => {
+                if (proj.logo) { allMediaUrls.push(proj.logo); projectCount++; }
+                if (proj.images) { allMediaUrls.push(...proj.images); projectCount += proj.images.length; }
+              });
+              console.log('📦 Found', projectCount, 'project images');
+            }
+          } catch (error) {
+            console.warn('⚠️ Could not load project images:', error);
+          }
+
+          // Remove duplicates and filter out empty/null values
+          allMediaUrls = [...new Set(allMediaUrls.filter(url => url && url.trim()))];
+
+          if (allMediaUrls.length > 0) {
+            console.log('📦 Requesting preload of', allMediaUrls.length, 'total media files (videos + images) via Service Worker...');
+
+            navigator.serviceWorker.controller.postMessage({
+              action: 'preloadMedia',
+              urls: allMediaUrls
+            });
+          } else {
+            console.warn('⚠️ No media files found to preload');
+          }
+        } catch (error) {
+          console.error('❌ Service Worker preload failed:', error);
+        }
+      }
+    }
+  </script>
+</body>
+</html>

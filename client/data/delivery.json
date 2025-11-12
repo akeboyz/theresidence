@@ -1,0 +1,311 @@
+[
+  {
+    "id": "del001",
+    "name_th": "Nine Pastry",
+    "name_en": "Nine Pastry",
+    "logo": "./client/images/businesses/dine01_logo.png",
+    "images": [
+      "./client/images/businesses/dine01_interior.jpg"
+    ],
+    "videos": [
+      "videos/dine001-promo.mp4"
+    ],
+    "description_th": "Artisan Bread and Pastry by Chef Nir Netzer. Freshly baked every day!",
+    "description_en": "Artisan Bread and Pastry by Chef Nir Netzer. Freshly baked every day!",
+    "type": "dine",
+    "category_th": "เบเกอรี่ & ขนมอบ",
+    "category_en": "Bakery & Pastry Shop",
+    "contact": { "phone": "0650383636", "line": "@ninepastry" },
+    "location_th": "615 สุขุมวิท 22",
+    "location_en": "615 Sukhumvit 22",
+    "status": "active",
+    "map_url": "https://share.google/qUSSFdTqNL1MhsbkS",
+    "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.6!2d100.5614!3d13.7308!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDQzJzUwLjkiTiAxMDDCsDMzJzQxLjAiRQ!5e0!3m2!1sen!2sth!4v1234567890",
+    "address_th": "22 ซอยสุขุมวิท 22 เขตคลองเตย กรุงเทพฯ",
+    "address_en": "22 Soi Sukhumvit 22, Klongtoey, Bangkok",
+    "service_type": [
+      "ads_only",
+      "walk_in",
+      "mobile_order"
+    ],
+    "menu": [
+      {
+        "menu_type": "Pastry",
+        "title": "Almond Croissant",
+        "title_th": "Almond Croissant",
+        "description": "Traditionally French Butter Croissant filled and topped with Almond Cream & Sliced Almonds",
+        "description_th": "Traditionally French Butter Croissant filled and topped with Almond Cream & Sliced Almonds",
+        "price": 95,
+        "image": "./client/images/menu/ninepastry_01.jpg"
+      },
+      {
+        "menu_type": "Pastry",
+        "title": "Pain au Chocolat",
+        "title_th": "Pain au Chocolat",
+        "description": "Crispy on the outside, fluffy on the inside, stuffed with Belgium Chocolate",
+        "description_th": "Crispy on the outside, fluffy on the inside, stuffed with Belgium Chocolate",
+        "price": 90,
+        "image": "./client/images/menu/ninepastry_02.jpg"
+      },
+      {
+        "menu_type": "Pastry",
+        "title": "Chocolate - Almond Croissant",
+        "title_th": "Chocolate - Almond Croissant",
+        "description": "Traditionally French Chocolate Croissant filled with Almond Cream & Topped with Sliced Almonds",
+        "description_th": "Traditionally French Chocolate Croissant filled with Almond Cream & Topped with Sliced Almonds",
+        "price": 110,
+        "image": "./client/images/menu/ninepastry_03.jpg"
+      },
+      {
+        "menu_type": "Pastry",
+        "title": "Danish",
+        "title_th": "Danish",
+        "description": "Danish pastry filled with pastry cream, almond cream, orange zest & raisins",
+        "description_th": "Danish pastry filled with pastry cream, almond cream, orange zest & raisins",
+        "price": 100,
+        "image": "./client/images/menu/ninepastry_04.jpg"
+      },
+      {
+        "menu_type": "Pastry",
+        "title": "Lemon Tart",
+        "title_th": "Lemon Tart",
+        "description": "Layers of Crusty Sweet dough, Lemon Cream, Italian Meringue & lime Zest.",
+        "description_th": "Layers of Crusty Sweet dough, Lemon Cream, Italian Meringue & lime Zest.",
+        "price": 180,
+        "image": "./client/images/menu/ninepastry_05.jpg"
+      },
+      {
+        "menu_type": "Pastry",
+        "title": "Pretzel",
+        "title_th": "Pretzel",
+        "description": "Soft and Rich in flavor classic Pretzel with sea salt",
+        "description_th": "Soft and Rich in flavor classic Pretzel with sea salt",
+        "price": 80,
+        "image": "./client/images/menu/ninepastry_06.jpg"
+      }
+    ],
+    "promotions": [
+      {
+        "title_th": "โปรลด 10% เมนูเส้นทุกชนิด",
+        "title_en": "10% OFF All Noodle Dishes",
+        "description_th": "เฉพาะวันจันทร์-ศุกร์ เวลา 11:00-14:00 น.",
+        "description_en": "Monday–Friday, 11am–2pm only.",
+        "start_date": "2025-08-05",
+        "end_date": "2025-08-31",
+        "image": "images/promo-jedaeng.jpg"
+      }
+    ],
+    "ctas": [
+      {
+        "id": "view_menu",
+        "text_th": "ดูเมนู",
+        "text_en": "View Menu",
+        "type": "modal",
+        "action": "show_menu",
+        "icon": "📋",
+        "priority": "primary",
+        "features": ["menu_display", "no_cart"]
+      },
+      {
+        "id": "reserve_table",
+        "text_th": "จองโต๊ะ",
+        "text_en": "Reserve Table",
+        "type": "modal",
+        "action": "reservation_form",
+        "icon": "📅",
+        "priority": "primary",
+        "features": ["guest_count", "phone_input", "otp_request", "otp_verify"]
+      },
+      {
+        "id": "view_map",
+        "text_th": "ดูแผนที่",
+        "text_en": "View Map",
+        "type": "modal",
+        "action": "show_map",
+        "icon": "🗺️",
+        "priority": "secondary",
+        "features": ["google_maps", "directions", "address"]
+      },
+      {
+        "id": "contact_us",
+        "text_th": "ติดต่อเรา",
+        "text_en": "Contact Us",
+        "type": "modal",
+        "action": "contact_info",
+        "icon": "📞",
+        "priority": "secondary",
+        "features": ["social_media", "qr_code", "phone", "line"]
+      }
+    ]
+  },
+  {
+    "id": "del002",
+    "name_th": "Nine Pastry",
+    "name_en": "Nine Pastry",
+    "logo": "./client/images/businesses/dine02_logo.png",
+    "images": [
+      "./client/images/businesses/dine02_interior.jpg"
+    ],
+    "videos": [],
+    "description_th": "Artisan Bread and Pastry by Chef Nir Netzer. Freshly baked every day!",
+    "description_en": "Artisan Bread and Pastry by Chef Nir Netzer. Freshly baked every day!",
+    "type": "both",
+    "category_th": "ร้านพิซซ่า",
+    "category_en": "Pizza Restaurant",
+    "contact": { "phone": "0855555555" },
+    "location_th": "ชั้น 1 ติดลิฟต์",
+    "location_en": "1st floor, next to elevator",
+    "projects": ["prj001", "prj003"],
+    "status": "active",
+    "map_url": "https://share.google/qUSSFdTqNL1MhsbkS",
+    "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.6!2d100.5614!3d13.7308!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDQzJzUwLjkiTiAxMDDCsDMzJzQxLjAiRQ!5e0!3m2!1sen!2sth!4v1234567890",
+    "address_th": "99 ถนนสุขุมวิท แขวงคลองเตย กรุงเทพฯ",
+    "address_en": "99 Sukhumvit Rd, Klongtoey, Bangkok",
+    "service_type": [
+      "ads_only",
+      "walk_in",
+      "reservation",
+      "delivery"
+    ],
+    "promotions": [
+      {
+        "title_th": "ซื้อ 1 แถม 1 เมนูพิซซ่า",
+        "title_en": "Buy 1 Get 1 Free Pizza",
+        "description_th": "ทุกวันพุธ เฉพาะทานที่ร้าน",
+        "description_en": "Every Wednesday, dine-in only.",
+        "start_date": "2025-08-01",
+        "end_date": "2025-08-31",
+        "image": "images/promo-pizzaexpress.jpg"
+      }
+    ]
+  },
+  {
+    "id": "del003",
+    "name_th": "Nine Pastry",
+    "name_en": "Nine Pastry",
+    "logo": "./client/images/businesses/dine03_logo.png",
+    "images": [
+      "./client/images/businesses/dine03_interior.jpg"
+    ],
+    "videos": [
+      "videos/pastryparis-promo.mp4"
+    ],
+    "description_th": "Artisan Bread and Pastry by Chef Nir Netzer. Freshly baked every day!",
+    "description_en": "Artisan Bread and Pastry by Chef Nir Netzer. Freshly baked every day!",
+    "type": "dine",
+    "category_th": "เบเกอรี่ & ขนมอบ",
+    "category_en": "Bakery & Pastry Shop",
+    "contact": { "phone": "0650383636", "line": "@ninepastry" },
+    "location_th": "615 สุขุมวิท 22",
+    "location_en": "615 Sukhumvit 22",
+    "projects": ["prj001", "prj004"],
+    "status": "active",
+    "map_url": "https://share.google/qUSSFdTqNL1MhsbkS",
+    "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.6!2d100.5614!3d13.7308!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDQzJzUwLjkiTiAxMDDCsDMzJzQxLjAiRQ!5e0!3m2!1sen!2sth!4v1234567890",
+    "address_th": "22 ซอยสุขุมวิท 22 เขตคลองเตย กรุงเทพฯ",
+    "address_en": "22 Soi Sukhumvit 22, Klongtoey, Bangkok",
+    "service_type": [
+      "ads_only",
+      "walk_in"
+    ],
+    "menu": [
+      {
+        "menu_type": "Pastry",
+        "title": "Almond Croissant",
+        "title_th": "Almond Croissant",
+        "description": "Traditionally French Butter Croissant filled and topped with Almond Cream & Sliced Almonds",
+        "description_th": "Traditionally French Butter Croissant filled and topped with Almond Cream & Sliced Almonds",
+        "price": 95,
+        "image": "./client/images/menu/ninepastry_01.jpg"
+      },
+      {
+        "menu_type": "Pastry",
+        "title": "Pain au Chocolat",
+        "title_th": "Pain au Chocolat",
+        "description": "Crispy on the outside, fluffy on the inside, stuffed with Belgium Chocolate",
+        "description_th": "Crispy on the outside, fluffy on the inside, stuffed with Belgium Chocolate",
+        "price": 90,
+        "image": "./client/images/menu/ninepastry_02.jpg"
+      },
+      {
+        "menu_type": "Pastry",
+        "title": "Chocolate - Almond Croissant",
+        "title_th": "Chocolate - Almond Croissant",
+        "description": "Traditionally French Chocolate Croissant filled with Almond Cream & Topped with Sliced Almonds",
+        "description_th": "Traditionally French Chocolate Croissant filled with Almond Cream & Topped with Sliced Almonds",
+        "price": 110,
+        "image": "./client/images/menu/ninepastry_03.jpg"
+      },
+      {
+        "menu_type": "Pastry",
+        "title": "Danish",
+        "title_th": "Danish",
+        "description": "Danish pastry filled with pastry cream, almond cream, orange zest & raisins",
+        "description_th": "Danish pastry filled with pastry cream, almond cream, orange zest & raisins",
+        "price": 100,
+        "image": "./client/images/menu/ninepastry_04.jpg"
+      },
+      {
+        "menu_type": "Pastry",
+        "title": "Lemon Tart",
+        "title_th": "Lemon Tart",
+        "description": "Layers of Crusty Sweet dough, Lemon Cream, Italian Meringue & lime Zest.",
+        "description_th": "Layers of Crusty Sweet dough, Lemon Cream, Italian Meringue & lime Zest.",
+        "price": 180,
+        "image": "./client/images/menu/ninepastry_05.jpg"
+      },
+      {
+        "menu_type": "Pastry",
+        "title": "Pretzel",
+        "title_th": "Pretzel",
+        "description": "Soft and Rich in flavor classic Pretzel with sea salt",
+        "description_th": "Soft and Rich in flavor classic Pretzel with sea salt",
+        "price": 80,
+        "image": "./client/images/menu/ninepastry_06.jpg"
+      }
+    ],
+    "promotions": [
+      {
+        "title_th": "ลด 15% เมนูขนมอบทุกชนิด",
+        "title_en": "15% OFF All Pastries",
+        "description_th": "เมื่อซื้อครบ 3 รายการขึ้นไป",
+        "description_en": "When you buy 3 items or more.",
+        "start_date": "2025-08-10",
+        "end_date": "2025-09-10",
+        "image": "images/promo-pastryparis.jpg"
+      }
+    ],
+    "ctas": [
+      {
+        "id": "view_menu",
+        "text_th": "ดูเมนู",
+        "text_en": "View Menu",
+        "type": "modal",
+        "action": "show_menu",
+        "icon": "📋",
+        "priority": "primary",
+        "features": ["menu_display", "no_cart"]
+      },
+      {
+        "id": "view_map",
+        "text_th": "ดูแผนที่",
+        "text_en": "View Map",
+        "type": "modal",
+        "action": "show_map",
+        "icon": "🗺️",
+        "priority": "secondary",
+        "features": ["google_maps", "directions", "address"]
+      },
+      {
+        "id": "contact_us",
+        "text_th": "ติดต่อเรา",
+        "text_en": "Contact Us",
+        "type": "modal",
+        "action": "contact_info",
+        "icon": "📞",
+        "priority": "secondary",
+        "features": ["social_media", "qr_code", "phone", "line"]
+      }
+    ]
+  }
+]

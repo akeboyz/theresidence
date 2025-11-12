@@ -1,0 +1,171 @@
+{
+  "ondemand": [
+    {
+      "id": "od001",
+      "name_th": "อินเตอร์เน็ต แพ็คเกจ",
+      "name_en": "Internet Package",
+      "logo": "./client/images/businesses/od001_logo.png",
+      "images": [
+        "./client/images/businesses/od001_interior.jpg"
+      ],
+      "videos": [
+        "medias/od001-01.MP4"
+      ],
+      "description_th": "บริการอินเตอร์เน็ตสำหรับลูกบ้านในโครงการด้วยเงื่อนไขสุดพิเศษ",
+      "description_en": "Internet Package with special privilege exclusively for the owner of the Project",
+      "type": "service",
+      "category_th": "บริการอินเตอร์เน็ต",
+      "category_en": "Internet Services",
+      "contact": {
+        "phone": "020000000",
+        "line": "@internetservice"
+      },
+      "location_th": "@ ทุกคอนโดที่มีหน้าจอของ aquamax",
+      "location_en": "@ All condominiums with aquamax signage",
+      "address_th": "สำนักงานใหญ่: ถนนสุขุมวิท กรุงเทพฯ",
+      "address_en": "Head Office: Sukhumvit Road, Bangkok",
+      "status": "active",
+      "service_type": ["ads_only"],
+      "image": "medias/shop001-01.MP4",
+      "map_url": "https://maps.app.goo.gl/aquamxads",
+      "map_embed_url": "https://www.google.com/maps/embed?pb=aquamxads",
+      "promotions": [
+        {
+          "title_th": "โฆษณาฟรีเดือนแรก!",
+          "title_en": "Free First Month Ad!",
+          "description_th": "เมื่อสมัครแพ็คเกจราย 3 เดือน",
+          "description_en": "Valid with 3-month package subscription",
+          "start_date": "2025-08-01",
+          "end_date": "2025-08-31",
+          "image": "images/promo-aquamxads.jpg"
+        }
+      ]
+    },
+    {
+      "id": "od002",
+      "name_th": "โกลวอัพ โมบาย",
+      "name_en": "Glow Up Mobile",
+      "logo": "./client/images/businesses/od002_logo.png",
+      "images": [
+        "./client/images/businesses/od002_interior.jpg"
+      ],
+      "videos": [
+        "medias/od002-01.MP4"
+      ],
+      "description_th": "จำหน่ายโทรศัพท์มือถือให้กับผู้นำทางเทคโนโลยีในโครงการเท่านั้น",
+      "description_en": "Sell mobile phone to the tech leaders in this project only.",
+      "type": "service",
+      "category_th": "ขายอุปกรณ์ไฮเทค",
+      "category_en": "Hi Tech Appliances",
+      "contact": {
+        "phone": "021234567",
+        "line": "@glowupmobile"
+      },
+      "location_th": "สำนักงานใหญ่ ถนนสุขุมวิท",
+      "location_en": "Head Office, Sukhumvit Road",
+      "address_th": "สำนักงานใหญ่: ถนนสุขุมวิท แขวงคลองเตยเหนือ กรุงเทพฯ",
+      "address_en": "Head Office: Sukhumvit Road, Wattana, Bangkok",
+      "status": "active",
+      "service_type": ["ads_only", "walk_in", "reservation"],
+      "image": "medias/shop002-01.MP4",
+      "map_url": "https://maps.app.goo.gl/aquamxagent",
+      "map_embed_url": "https://www.google.com/maps/embed?pb=aquamxagent",
+      "promotions": [
+        {
+          "title_th": "ค่าคอมมิชชัน 0% เดือนแรก",
+          "title_en": "0% Commission for First Month",
+          "description_th": "เมื่อฝากขาย/เช่า กับ aquamax ภายในเดือนนี้",
+          "description_en": "Valid when listing with aquamax this month",
+          "start_date": "2025-08-01",
+          "end_date": "2025-08-31",
+          "image": "images/promo-aquamxagent.jpg"
+        }
+      ],
+      "ctas": [
+        {
+          "id": "send_request",
+          "text_th": "ส่งคำขอ",
+          "text_en": "Send Request",
+          "type": "modal",
+          "action": "service_request",
+          "icon": "📋",
+          "priority": "primary",
+          "features": ["service_details", "phone_input", "message_input", "otp_request", "otp_verify"]
+        },
+        {
+          "id": "view_map",
+          "text_th": "ดูแผนที่",
+          "text_en": "View Map",
+          "type": "modal",
+          "action": "show_map",
+          "icon": "🗺️",
+          "priority": "secondary",
+          "features": ["google_maps", "directions", "address"]
+        },
+        {
+          "id": "contact_us",
+          "text_th": "ติดต่อเรา",
+          "text_en": "Contact Us",
+          "type": "modal",
+          "action": "contact_info",
+          "icon": "📞",
+          "priority": "secondary",
+          "features": ["social_media", "qr_code", "phone", "line", "website"]
+        }
+      ]
+    },
+    {
+      "id": "od003",
+      "name_th": "Hipster Brand, Fashion",
+      "name_en": "Hipster Brand, Fashion",
+      "logo": "./client/images/businesses/od003_logo.png",
+      "images": [
+        "./client/images/businesses/od003_interior.jpg"
+      ],
+      "videos": [
+        "medias/od003-01.MP4"
+      ],
+      "description_th": "Dress up and strike the pose!!",
+      "description_en": "Dress up and strike the pose!!",
+      "type": "service",
+      "category_th": "เครื่องแต่งกาย",
+      "category_en": "Apparel",
+      "contact": {
+        "phone": "0622456656",
+        "line": "@hipsterbrand"
+      },
+      "location_th": "บริการทั่วกรุงเทพและปริมณฑล",
+      "location_en": "Service in Bangkok and surrounding areas",
+      "address_th": "กรุงเทพฯ",
+      "address_en": "Bangkok",
+      "status": "active",
+      "service_type": ["ads_only", "reservation"],
+      "image": "medias/od003-01.MP4",
+      "map_url": "https://maps.app.goo.gl/manditale",
+      "map_embed_url": "https://www.google.com/maps/embed?pb=manditale",
+      "promotions": [],
+      "ctas": [
+        {
+          "id": "send_request",
+          "text_th": "ส่งคำขอ",
+          "text_en": "Send Request",
+          "type": "modal",
+          "action": "service_request",
+          "icon": "📋",
+          "priority": "primary",
+          "features": ["service_details", "phone_input", "message_input", "otp_request", "otp_verify"]
+        },
+        {
+          "id": "contact_us",
+          "text_th": "ติดต่อเรา",
+          "text_en": "Contact Us",
+          "type": "modal",
+          "action": "contact_info",
+          "icon": "📞",
+          "priority": "secondary",
+          "features": ["social_media", "qr_code", "phone", "line", "website"]
+        }
+      ]
+    }
+  ]
+}
